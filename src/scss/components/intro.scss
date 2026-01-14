@@ -1,0 +1,92 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.intro {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 850px;
+  padding: 60px 0px;
+  background: linear-gradient(294deg, #d8ff3a 0%, #b1d130 50%);
+  color: white;
+  z-index: 1;
+  @include laptop {
+    min-height: 600px;
+  }
+  @include laptop-min {
+    min-height: 550px;
+  }
+  @include tablet {
+    align-items: start;
+  }
+  @include tablet-min {
+    padding: 30px 0px 240px 0px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__title {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    text-transform: uppercase;
+    margin: 0;
+
+    @include laptop-middle {
+      font-size: 48px;
+    }
+    @include laptop-min {
+      font-size: 34px;
+    }
+  }
+  &__bottom {
+    margin-top: auto;
+  }
+  &__btn {
+    width: 300px;
+    max-width: 100%;
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__content {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 139%;
+    max-width: 390px;
+    margin: 30px 0px 0px 0px;
+    @include laptop-min {
+      font-size: 16px;
+    }
+    @include tablet {
+      margin-top: 20px;
+      max-width: 340px;
+    }
+  }
+  &__img {
+    display: block;
+    width: 700px;
+    align-self: start;
+    @include laptop {
+      width: 500px;
+    }
+    @include laptop-min {
+      width: 400px;
+    }
+    @include tablet {
+      position: absolute;
+      right: -80px;
+      bottom: -0;
+      z-index: -1;
+      width: 280px;
+    }
+  }
+}

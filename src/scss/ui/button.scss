@@ -1,0 +1,50 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+}
+.btn-s {
+  --background: var(--primary);
+  --background-hover: var(--primary-d);
+  --color: black;
+  --color-hover: black;
+
+  @include flex-center;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  background-color: var(--background);
+  outline: none;
+  padding: 20px 30px;
+  box-shadow: 0 2px 4px 0 rgba(18, 18, 18, 0.25);
+
+  color: var(--color);
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  @include hover {
+    box-shadow: none;
+    background-color: var(--background-hover);
+    color: var(--color-hover);
+  }
+  @include tablet {
+    padding: 16px 26px;
+  }
+
+  &._white {
+    --background: white;
+    --background-hover: white;
+  }
+}
