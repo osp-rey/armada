@@ -1,0 +1,16 @@
+[data-more-item] {
+  transform: translateY(-20px);
+  opacity: 0;
+  display: none;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+
+  &._show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &._open {
+    display: block;
+  }
+}

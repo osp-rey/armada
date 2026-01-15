@@ -46,5 +46,16 @@
   &._white {
     --background: white;
     --background-hover: white;
+    &._active {
+      pointer-events: none;
+      --background: var(--primary);
+      --background-hover: var(--primary-d);
+    }
+  }
+  &._black {
+    --background: var(--black);
+    --background-hover: var(--black-l);
+    --color: white;
+    --color-hover: white;
   }
 }

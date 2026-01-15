@@ -1,0 +1,64 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-services {
+  background-color: var(--light);
+  @include laptop-min {
+    overflow: hidden
+  }
+  &__head {
+    @include flex-between;
+    gap: 30px;
+    margin-bottom: 40px;
+
+    @include laptop-min {
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+
+      .slider-arrows {
+        display: none;
+      }
+    }
+  }
+  &__nav-slider {
+    padding: 4px;
+    margin: -4px !important; 
+    @include laptop-min {
+      overflow: visible !important;
+      width: 100%;
+    }
+  }
+  &__nav-btn {
+    box-sizing: border-box;
+
+    @include laptop-min {
+      width: fit-content !important;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    [data-more-item] {
+      @include first(4) {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  &__btn-more {
+    margin: 50px auto 0px auto;
+    width: 330px;
+    max-width: 100%;
+
+    @include laptop-middle {
+      margin-top: 30px;
+    }
+    @include tablet-min {
+      width: 100%;
+      margin-top: 25px;
+    }
+  }
+}

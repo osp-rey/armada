@@ -15,6 +15,10 @@
 @use "./ui/modal";
 @use "./ui/form";
 @use "./ui/social";
+@use "./ui/slider";
+@use "./ui/card-service";
+@use "./ui/more-item";
+@use "./ui/tab";
 
 // components
 @use "./components/header";
@@ -22,5 +26,6 @@
 @use "./components/intro";
 @use "./components/s-about";
 @use "./components/burger";
+@use "./components/s-services";
 
 @use "./components/footer";

@@ -1,0 +1,49 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.slider-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.slider-arrow {
+  --background: white;
+  --background-h: var(--primary);
+  --color: black;
+
+  @include flex-center;
+  cursor: pointer;
+  background-color: var(--background);
+  box-shadow: 0 2px 4px 0 rgba(18, 18, 18, 0.25);
+  border-radius: 50%;
+
+  width: 45px;
+  height: 45px;
+  color: var(--color);
+
+  transition: background-color .3s ease, background-color .3s ease;
+
+  @include hover {
+    background-color: var(--background-h);
+  }
+  &.swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &._prev {
+    svg {
+      transform: translateX(-1px);
+    }
+  }
+  &._next {
+    svg {
+      transform: translateX(1px);
+    }
+  }
+
+  svg {
+    width: 7px;
+    height: 14px;
+  }
+}

@@ -1,0 +1,59 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.card-service {
+  padding: 30px 40px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(18, 18, 18, 0.25);
+  border-radius: 16px;
+  display: flex;
+  align-items: start;
+  gap: 40px;
+
+  @include laptop-middle {
+    padding: 25px;
+    gap: 25px;
+  }
+  @include laptop-min {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 125%;
+    margin: 0;
+    flex: 0 0 345px;
+
+    @include laptop-middle {
+      font-size: 20px;
+      flex-basis: 275px;
+    }
+    @include tablet {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__content {
+    line-height: 167%;
+    color: rgba(0, 0, 0, 0.5);
+    flex: 0 1 420px;
+    margin: 0px 0px 0px auto;
+
+    @include laptop-min {
+      flex: 0 0 calc(100% - 300px);
+    }
+    @include tablet {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__btn {
+    flex: 0 1 340px;
+    @include tablet-min {
+      flex: auto;
+      width: 100%;
+    }
+  }
+}
