@@ -61,7 +61,7 @@
     input[type="checkbox"] {
       &:checked + .wpcf7-list-item-label {
         &::before {
-          background: url("@img/check-white.svg") center / 90% auto no-repeat;
+          background: url("@img/check-primary.svg") center / 90% auto no-repeat;
           background-color: var(--background-color-active);
         }
       }

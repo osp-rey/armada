@@ -1,0 +1,84 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-connect {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0px;
+  background-color: var(--black);
+  color: white;
+  z-index: 1;
+  @include tablet {
+    padding-bottom: 0;
+  }
+  &__wrapper {
+    max-width: 600px;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 25px;
+  }
+  &__descr {
+    font-size: 20px;
+    line-height: 125%;
+    margin: 0px 0px 40px 0px;
+    @include tablet {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    width: 520px;
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &__form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @include tablet-min {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__form-btn {
+    width: 275px;
+    max-width: 100%;
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__img {
+    position: absolute;
+    display: block;
+    width: 560px;
+    bottom: 0;
+    right: 160px;
+    z-index: -1;
+    @include laptop {
+      width: 450px;
+      right: 30px;
+    }
+    @include laptop-middle {
+      width: 390px;
+    }
+    @include laptop-min {
+      width: 295px;
+      right: -40px;
+    }
+    @include tablet {
+      position: static;
+      width: 500px;
+      margin: 0 auto;
+    }
+    @include tablet-min {
+      width: 90%;
+    }
+  }
+}
