@@ -65,7 +65,6 @@
       }
 
       @include hover {
-        color: var(--primary);
         &::before {
           right: 0;
         }

@@ -9,10 +9,18 @@
 // ui
 @use "./ui/button";
 @use "./ui/list";
+@use "./ui/sect";
+@use "./ui/title";
+@use "./ui/content";
+@use "./ui/modal";
+@use "./ui/form";
+@use "./ui/social";
 
 // components
 @use "./components/header";
 
 @use "./components/intro";
+@use "./components/s-about";
+@use "./components/burger";
 
 @use "./components/footer";

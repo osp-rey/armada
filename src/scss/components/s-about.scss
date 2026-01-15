@@ -1,0 +1,74 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-about {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    @include laptop-min {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  &__info {
+  }
+  &__title {
+    margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+  &__btn {
+    width: 340px;
+    max-width: 100%;
+    margin-top: 50px;
+
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    @include laptop {
+      gap: 30px;
+    }
+    @include tablet {
+      gap: 20px
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__item {
+    @include flex-center;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 210px;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgba(18, 18, 18, 0.25);
+
+    text-align: center;
+
+    @include tablet {
+      gap: 15px;
+      min-height: 180px;
+    }
+  }
+  &__item-icon {
+    display: block;
+    width: 75px;
+    @include tablet {
+      width: 50px;
+    }
+  }
+  &__item-content {
+    font-size: 16px;
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+}

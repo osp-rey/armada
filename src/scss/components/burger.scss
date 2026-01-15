@@ -1,0 +1,113 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.burger-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 110;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+
+  &._active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+.burger {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100svh;
+  width: 320px;
+  max-width: 100%;
+  background-color: white;
+  overflow-y: auto;
+  padding: 20px;
+  z-index: 120;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.4s ease;
+
+  &._open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  @media (min-width: 992px) {
+    display: none;
+  }
+  &__head {
+    @include flex-between;
+    margin-bottom: 25px;
+  }
+  &__logo {
+    display: block;
+    width: 130px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__close {
+    width: 20px;
+    height: 20px;
+
+    transition: opacity 0.3s ease;
+    @include hover {
+      opacity: 0.5;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    a {
+      font-size: 16px;
+    }
+  }
+  &__contacts {
+    margin-top: auto;
+  }
+  &__tel {
+    display: block;
+    width: fit-content;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+  }
+  &__address {
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,116 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.input-control {
+  width: 100%;
+}
+
+.input {
+  --border-color: white;
+  --background-color: white;
+
+  border: 1px solid var(--border-color);
+  outline: none;
+  background-color: var(--background-color);
+  width: 100%;
+  padding: 15px 20px;
+
+  font-size: 16px;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  &::placeholder {
+    color: var(--gray);
+    font-size: 14px;
+  }
+
+  &:focus {
+    --border-color: var(--primary);
+  }
+
+  &._outline {
+    --border-color: var(--primary);
+
+    &:focus {
+      --border-color: black;
+    }
+  }
+}
+.check-wrapper {
+  --border-color: rgba(0, 0, 0, 0.6);
+  --background-color: transparent;
+  --background-color-active: black;
+  --color: black;
+  --color-l: var(--gray-d);
+
+  position: relative;
+  color: var(--color);
+
+  @include tablet-min {
+    font-size: 14px;
+  }
+
+  &._white {
+    --border-color: rgba(255, 255, 255, 0.6);
+    --color: white;
+    --background-color: transparent;
+    --background-color-active: white;
+
+    input[type="checkbox"] {
+      &:checked + .wpcf7-list-item-label {
+        &::before {
+          background: url("@img/check-white.svg") center / 90% auto no-repeat;
+          background-color: var(--background-color-active);
+        }
+      }
+    }
+  }
+
+  a {
+    color: var(--color-l);
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+
+    &:checked + .wpcf7-list-item-label {
+      &::before {
+        background: url("@img/check-white.svg") center / 90% auto no-repeat;
+        background-color: var(--background-color-active);
+      }
+    }
+  }
+  .wpcf7-list-item-label {
+    margin: 0;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      font-size: 14px;
+      background-color: var(--background-color);
+
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border-color);
+
+      transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+    }
+  }
+}
