@@ -4,6 +4,10 @@
 .slider-arrows {
   display: flex;
   gap: 12px;
+
+  @include laptop-min {
+    display: none;
+  }
 }
 
 .slider-arrow {
@@ -45,5 +49,33 @@
   svg {
     width: 7px;
     height: 14px;
+  }
+}
+
+.slider-pagination {
+  @include flex-center;
+  gap: 6px;
+  margin-top: 30px;
+  &._lap {
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    flex: 0 1 8px;
+    height: 8px;
+    opacity: 0.5;
+    border-radius: 50px;
+    background-color: var(--primary);
+    margin: 0 !important;
+    cursor: pointer;
+
+    transition: opacity .3s ease, flex-basis .3s ease;
+
+    &.swiper-pagination-bullet-active {
+      opacity: 1;
+      flex-basis: 20px;
+    }
   }
 }

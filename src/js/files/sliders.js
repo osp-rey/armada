@@ -22,4 +22,36 @@ export default function sliders() {
       },
     });
   }
+
+  const sliderTeam = document.querySelector(".s-team__slider");
+
+  if (sliderTeam) {
+    const swiper = new Swiper(sliderTeam, {
+      speed: 900,
+      slidesPerView: 1,
+      spaceBetween: 15,
+      navigation: {
+        prevEl: ".s-team .slider-arrow._prev",
+        nextEl: ".s-team .slider-arrow._next",
+      },
+      pagination: {
+        clickable: true,
+        el: ".s-team .slider-pagination",
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+      },
+    });
+  }
 }

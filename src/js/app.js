@@ -2,6 +2,7 @@ import "../scss/style.scss";
 import burger from "./files/burger.js";
 import calcPurpose from "./files/calcPurpose.js";
 import inputmask from "./files/inputmask.js";
+import map from "./files/map.js";
 import more from "./files/more.js";
 import sliders from "./files/sliders.js";
 import tab from "./files/tab.js";
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tab();
   calcPurpose();
   inputmask();
+  map();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,

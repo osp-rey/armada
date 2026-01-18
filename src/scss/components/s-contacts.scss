@@ -1,0 +1,48 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-contacts {
+  &__wrapper {
+    display: flex;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--black);
+    color: white;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    flex: 0 1 420px;
+    padding: 50px;
+
+    font-size: 17px;
+
+    a:not(.social-item) {
+      transition: color .3s ease;
+
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__logo {
+    display: block;
+    width: 170px;
+    margin-bottom: 30px;
+  }
+  &__tel {
+    display: block;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  &__mail {
+  }
+  &__text {
+  }
+  &__map {
+    flex: 1;
+  }
+}

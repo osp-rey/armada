@@ -13,3 +13,8 @@
     padding: 60px 0px;
   }
 }
+.sect-head {
+  @include flex-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
