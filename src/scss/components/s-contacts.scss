@@ -4,6 +4,9 @@
 .s-contacts {
   &__wrapper {
     display: flex;
+    @include tablet {
+      flex-wrap: wrap;
+    }
   }
   &__info {
     display: flex;
@@ -17,12 +20,24 @@
 
     font-size: 17px;
 
-    a:not(.social-item) {
+    a:not(.social-item, .btn-s) {
       transition: color .3s ease;
 
       @include hover {
         color: var(--primary);
       }
+    }
+
+    @include laptop-min {
+      gap: 20px;
+      padding: 30px;
+      font-size: 16px;
+      flex-basis: 330px;
+    }
+    @include tablet {
+      flex: auto;
+      width: 100%;
+      padding: 20px;
     }
   }
   &__logo {
@@ -42,7 +57,19 @@
   }
   &__text {
   }
+  &__btn {
+    width: 270px;
+    max-width: 100%;
+    @include tablet-min {
+      width: 100%;
+    }
+  }
   &__map {
     flex: 1;
+    @include tablet {
+      height: 400px;
+      flex: auto;
+      width: 100%;
+    }
   }
 }

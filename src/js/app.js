@@ -1,6 +1,8 @@
 import "../scss/style.scss";
+import anchors from "./files/anchors.js";
 import burger from "./files/burger.js";
 import calcPurpose from "./files/calcPurpose.js";
+import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
 import map from "./files/map.js";
 import more from "./files/more.js";
@@ -15,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   calcPurpose();
   inputmask();
   map();
+  headerScroll();
+  anchors();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,
